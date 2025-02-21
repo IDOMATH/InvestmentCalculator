@@ -15,18 +15,18 @@ export class UserInputComponent {
   enteredAnnualInvestment = 0.0;
   enteredExpectedReturn = 5.0;
   enteredDuration = 10;
-  @Output() calculate = new EventEmitter<void>();
   private investmentService = inject(InvestmentService);
 
   onSubmit() {
-    console.log("Submitting");
-    this.calculate.emit(
-      this.investmentService.calculateInvestmentResults(
-        this.enteredInitialInvestment,
-        this.enteredDuration,
-        this.enteredExpectedReturn,
-        this.enteredAnnualInvestment
-      )
+    this.investmentService.calculateInvestmentResults(
+      this.enteredInitialInvestment,
+      this.enteredDuration,
+      this.enteredExpectedReturn,
+      this.enteredAnnualInvestment
     );
+    this.enteredInitialInvestment = 0.0;
+    this.enteredAnnualInvestment = 0.0;
+    this.enteredExpectedReturn = 5.0;
+    this.enteredDuration = 10;
   }
 }

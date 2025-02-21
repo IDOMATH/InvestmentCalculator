@@ -10,7 +10,4 @@ import { InvestmentService } from "./investment-results/investment-results";
   templateUrl: "./app.component.html",
   imports: [HeaderComponent, UserInputComponent, InvestmentResultsComponent],
 })
-export class AppComponent {
-  private investmentService = inject(InvestmentService);
-  results = this.investmentService.getInvestmentResults();
-}
+export class AppComponent {}

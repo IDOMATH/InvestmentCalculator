@@ -11,7 +11,7 @@ export class InvestmentService {
     expectedReturn: number,
     annualInvestment: number
   ) {
-    this.annualData = [];
+    this.annualData.length = 0;
     let investmentValue = initialInvestment;
 
     for (let i = 0; i < duration; i++) {
@@ -29,6 +29,7 @@ export class InvestmentService {
         totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
+    console.log(this.annualData);
   }
 
   getInvestmentResults() {

@@ -1,16 +1,3 @@
 <app-header />
 <app-user-input />
-<table>
-  <tr>
-    <th>Year</th>
-    <th>Investment Value</th>
-    <th>Interest (Year)</th>
-    <th>Total Interest</th>
-    <th>Invested Capital</th>
-  </tr>
-  @for (row of results; track row.year) {
-  <tr>
-    <app-investment-results [investmentResult]="row" />
-  </tr>
-  }
-</table>
+<app-investment-results />
