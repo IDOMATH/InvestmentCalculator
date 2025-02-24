@@ -1,6 +1,5 @@
-import { Component, Output, EventEmitter, inject } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { InvestmentResult } from "../investment-results/investment-results.model";
 import { InvestmentService } from "../investment-results/investment-results";
 
 @Component({
@@ -24,6 +23,10 @@ export class UserInputComponent {
       this.enteredExpectedReturn,
       this.enteredAnnualInvestment
     );
+    this.resetForm();
+  }
+
+  resetForm() {
     this.enteredInitialInvestment = 0.0;
     this.enteredAnnualInvestment = 0.0;
     this.enteredExpectedReturn = 5.0;
